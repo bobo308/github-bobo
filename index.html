@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="ar">
 <head>
@@ -19,13 +18,21 @@
       margin: 0;
     }
     h1 {
-      font-size: 60px;
+      font-size: 50px;
       margin-bottom: 20px;
     }
     p {
-      font-size: 28px;
+      font-size: 24px;
       animation: blink 1s infinite;
-      font-weight: bold;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+      font-size: 20px;
+      margin-top: 20px;
+    }
+    li {
+      margin-bottom: 8px;
     }
     @keyframes blink {
       0%, 100% { opacity: 1; }
@@ -35,6 +42,18 @@
 </head>
 <body>
   <h1>BOBO</h1>
-  <p>هاتفك تم اختراقه!</p>
+  <p>تم اختراق هذه الهواتف:</p>
+  <ul>
+    <li>هاتف Galaxy S21 - الجزائر</li>
+    <li>هاتف iPhone 13 - تونس</li>
+    <li>هاتف Xiaomi Redmi Note 11 - المغرب</li>
+    <li>هاتف Infinix Hot 12 - ليبيا</li>
+    <li>هاتف Huawei P30 - مصر</li>
+    <li>هاتف Infinix صالح فرحاتي - ششار</li>
+  </ul>
+  <audio autoplay>
+    <source src="hacker.mp3" type="audio/mpeg">
+    متصفحك لا يدعم تشغيل الصوت.
+  </audio>
 </body>
 </html>

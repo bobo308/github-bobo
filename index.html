@@ -18,21 +18,35 @@
       margin: 0;
     }
     h1 {
-      font-size: 50px;
+      font-size: 60px;
       margin-bottom: 20px;
     }
     p {
-      font-size: 24px;
+      font-size: 28px;
+      font-weight: bold;
       animation: blink 1s infinite;
     }
-    ul {
-      list-style: none;
-      padding: 0;
+    button {
+      margin-top: 30px;
+      padding: 15px 30px;
       font-size: 20px;
-      margin-top: 20px;
+      background-color: red;
+      color: white;
+      border: none;
+      cursor: pointer;
+      border-radius: 10px;
     }
-    li {
-      margin-bottom: 8px;
+    #popup {
+      display: none;
+      position: fixed;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: darkred;
+      color: white;
+      padding: 20px;
+      border-radius: 10px;
+      font-size: 22px;
     }
     @keyframes blink {
       0%, 100% { opacity: 1; }
@@ -42,18 +56,27 @@
 </head>
 <body>
   <h1>BOBO</h1>
-  <p>تم اختراق هذه الهواتف:</p>
-  <ul>
-    <li>هاتف Galaxy S21 - الجزائر</li>
-    <li>هاتف iPhone 13 - تونس</li>
-    <li>هاتف Xiaomi Redmi Note 11 - المغرب</li>
-    <li>هاتف Infinix Hot 12 - ليبيا</li>
-    <li>هاتف Huawei P30 - مصر</li>
-    <li>هاتف Infinix صالح فرحاتي - ششار</li>
-  </ul>
-  <audio autoplay>
-    <source src="hacker.mp3" type="audio/mpeg">
-    متصفحك لا يدعم تشغيل الصوت.
-  </audio>
+  <p>هاتفك تم اختراقه!</p>
+  <button onclick="attemptFix()">إصلاح الآن</button>
+
+  <div id="popup">سيتم حذف بياناتك خلال <span id="countdown">10</span> ثوانٍ!</div>
+
+  <script>
+    function attemptFix() {
+      alert("فشل الإصلاح، البيانات في خطر!");
+      let popup = document.getElementById("popup");
+      let countdown = document.getElementById("countdown");
+      popup.style.display = "block";
+      let seconds = 10;
+      let interval = setInterval(() => {
+        seconds--;
+        countdown.textContent = seconds;
+        if (seconds <= 0) {
+          clearInterval(interval);
+          popup.textContent = "تم حذف البيانات!";
+        }
+      }, 1000);
+    }
+  </script>
 </body>
 </html>
